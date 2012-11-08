@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.123" errors="0" skipped="0" tests="1" name="com.roclas.AppTest">
+<testsuite failures="0" time="0.104" errors="0" skipped="0" tests="1" name="com.roclas.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/opt/java/jdk1.6.0_26/jre/lib/amd64"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/home/carlos/proyectos/github/pomParser"/>
     <property name="java.endorsed.dirs" value="/opt/java/jdk1.6.0_26/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="/home/carlos/proyectos/github/pomParser/target/surefire/surefirebooter7101858770797413605.jar"/>
+    <property name="surefire.real.class.path" value="/home/carlos/proyectos/github/pomParser/target/surefire/surefirebooter3214613512200749715.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -42,7 +42,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/opt/java/jdk1.6.0_26/jre"/>
-    <property name="sun.java.command" value="/home/carlos/proyectos/github/pomParser/target/surefire/surefirebooter7101858770797413605.jar /home/carlos/proyectos/github/pomParser/target/surefire/surefire6526116206947614767tmp /home/carlos/proyectos/github/pomParser/target/surefire/surefire3128946751409931043tmp"/>
+    <property name="sun.java.command" value="/home/carlos/proyectos/github/pomParser/target/surefire/surefirebooter3214613512200749715.jar /home/carlos/proyectos/github/pomParser/target/surefire/surefire4408042783774829459tmp /home/carlos/proyectos/github/pomParser/target/surefire/surefire7506099824522116825tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="en"/>
     <property name="java.vm.info" value="mixed mode"/>
@@ -58,5 +58,5 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.076" classname="com.roclas.AppTest" name="testApp"/>
+  <testcase time="0.068" classname="com.roclas.AppTest" name="testApp"/>
 </testsuite>

@@ -4,7 +4,7 @@
   <groupId>com.roclas</groupId>
   <artifactId>pom_parser</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>pom_parser</name>
   <url>http://maven.apache.org</url>
   <dependencies>

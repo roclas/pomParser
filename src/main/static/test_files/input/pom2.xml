@@ -1,0 +1,15 @@
+<project>
+  <description>This is a project requiring JDBC</description>
+  <groupId>com.roclas</groupId>
+  <artifactId>jdbc</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>com.mycompany</groupId>
+      <artifactId>jdbc</artifactId>
+      <version>1.0</version>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <title>Dependencies between POMs</title>
+   <style>
+   .reverse{ font-size: x-small; }
+   .IDependOn{ background-color: red; }
+   .dependsOnMe{ background-color: yellow; }
+   </style>
+ </head>
+ <body>
+
+<div style="background-color:grey;">
+Explanation:<br>
+<strong>groupId:artifactId (dependends on N) (M depend on it):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='IDependOn'>com.mycompany:securit</span><-- groupId:ArtifactId is a dependency for com.mycompany<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>org.springframework.security:spring-security-taglibs</span> <-- groupId:ArtifactId depends on org.springfram...<br />
+</div>
+<br />
+<br />
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+   <script>
+     $(document).ready(function(){
+       //$("span.reverse").click(function(event){
+       	 //var id=this.getAttribute("class").split(" ")[1];
+       	 //var links=jQuery("a[href='#"+id+"']");
+       	 //links.each(function(i,e){ console.debug(e.getAttribute("class")); });
+         //event.preventDefault();
+       //});
+     });
+   </script>

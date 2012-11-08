@@ -1,0 +1,26 @@
+<project>
+  <groupId>com.mycompany</groupId>
+  <artifactId>jdbc</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>com.microsoft</groupId>
+      <artifactId>msbase</artifactId>
+      <version>${msJdbcVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.microsoft</groupId>
+      <artifactId>msutil</artifactId>
+      <version>${msJdbcVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.microsoft</groupId>
+      <artifactId>mssqlserver</artifactId>
+      <version>${msJdbcVersion}</version>
+    </dependency>
+  </dependencies>
+  <properties>
+    <msJdbcVersion>(1.0,)</msJdbcVersion>
+  </properties>
+</project>

@@ -13,7 +13,7 @@ which projects depend on certain project, and on which projects depends certain 
 
 OPTION A (IF YOU DON'T WANT TO COMPILE THE SOURCES):
 Steps:
-1)just get the latest jar from https://github.com/roclas/pomParser/blob/master/target/pom_parser-X.X.jar and use it like this:
+1)just get the latest jar from https://github.com/roclas/pomParser/blob/master/target/pom_parser-1.0.jar and use it like this:
 java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
 
 

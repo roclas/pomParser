@@ -9,6 +9,7 @@ pomParser creates an html document showing your POM dependency trees, whith hype
 where you can search and navigate both ways: 
 which projects depend on certain project, and on which projects depends certain project
 
+OPTION A (THE "HARD WAY"):
 Steps:
 
 1)put the project into a folder and compile it with maven:
@@ -20,4 +21,12 @@ mvn install
 java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
 
 And that's it, you'll get a nice html document that will help you understand better how your poms are related to each other.
+
+
+OPTION B (IF YOU DON'T WANT TO COMPILE THE SOURCES):
+Steps:
+1)just get the jar and use it like this:
+java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
+
+
 

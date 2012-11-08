@@ -17,7 +17,7 @@ mvn install
 2)gather all your pom files and change their names (so they don't overrite each other) and copy them to a directory.
 
 3)get the jar and use it like this:
-java -jar pom_parser-X.X.jar <origin_dir_where_all_your_poms_are> <dest_dir_where_the_graph_goes>
+java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
 
 And that's it, you'll get a nice html document that will help you understand better how your poms are related to each other.
 

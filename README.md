@@ -6,8 +6,8 @@ Have you ever tried to find a tool to show you schematically how these projects 
 but you don't really like them or they are very hard to install or to use?
 
 pomParser creates an html document showing your POM dependency trees, whith hyperlinks between project names,
-where you can search and navigate both ways: 
-which projects depend on certain project, and on which projects depends certain project
+where you can search (and navigate) both ways: 
+which projects depend on certain project, and on which projects certain project depends
 
 <br /><br />
 

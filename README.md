@@ -9,16 +9,19 @@ pomParser creates an html document showing your POM dependency trees, whith hype
 where you can search and navigate both ways: 
 which projects depend on certain project, and on which projects depends certain project
 
-
+<br /><br />
 
 OPTION A (IF YOU DON'T WANT TO COMPILE THE SOURCES):
+
 Steps:
-1)just get the latest jar from https://github.com/roclas/pomParser/blob/master/target/pom_parser-1.0.jar and use it like this:
+
+1)just get the latest jar from https://github.com/roclas/pomParser/raw/master/target/pom_parser-1.0.jar and use it like this:
 java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
 
-
+<br /><br />
 
 OPTION B (THE "HARD WAY", you compile all the code):
+
 Steps:
 
 1)put the project into a folder and compile it with maven:

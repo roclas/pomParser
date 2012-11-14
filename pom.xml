@@ -7,6 +7,11 @@
   <version>1.0</version>
   <name>pom_parser</name>
   <url>http://maven.apache.org</url>
+  <properties>
+	<!-- maven-compiler-plugin configuration -->
+	<maven.compiler.source>1.6</maven.compiler.source>
+	<maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

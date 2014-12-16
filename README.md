@@ -15,7 +15,7 @@ OPTION A (IF YOU DON'T WANT TO COMPILE THE SOURCES):
 
 Steps:
 
-1)just get the latest jar from https://github.com/roclas/pomParser/raw/master/target/pom_parser-1.0.jar and use it like this:
+1)just get the latest jar from https://github.com/roclas/pomParser/raw/master/lib/pom_parser-1.0.jar and use it like this:
 java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
 
 <br /><br />

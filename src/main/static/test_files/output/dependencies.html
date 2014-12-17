@@ -22,21 +22,23 @@ Explanation:<br>
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
    <script>
      $(document).ready(function(){
-       //$("span.reverse").click(function(event){
-       	 //var id=this.getAttribute("class").split(" ")[1];
-       	 //var links=jQuery("a[href='#"+id+"']");
-       	 //links.each(function(i,e){ console.debug(e.getAttribute("class")); });
-         //event.preventDefault();
-       //});
+       $("span.dependsOnMe").hover(function(event){
+		$(this).css('cursor','pointer');
+       });
+       $("span.dependsOnMe").click(function(event){
+		//var id="null__crossdata-server";
+		var id=this.innerHTML;
+		$(document).scrollTop( $("#"+id).offset().top );  
+       });
      });
    </script>
 
-<br /><strong id='com.mycompany:jdbc'>com.mycompany:jdbc</strong> (depends on 3) (0 depend on it):<br />
-	&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>com.microsoft:mssqlserver</span><br />
-	&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>com.microsoft:msutil</span><br />
-	&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>com.microsoft:msbase</span><br />
+<br /><strong id='com.mycompany__jdbc'>com.mycompany__jdbc</strong> (depends on 3) (0 depend on it):<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>com.microsoft__mssqlserver</span><br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>com.microsoft__msutil</span><br />
+	&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>com.microsoft__msbase</span><br />
 
-<br /><strong id='com.roclas:jdbc'>com.roclas:jdbc</strong> (depends on 1) (0 depend on it):<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a class='com.roclas:jdbc dependsOnMe' href='#com.mycompany:jdbc'>com.mycompany:jdbc</a><br />
+<br /><strong id='com.roclas__jdbc'>com.roclas__jdbc</strong> (depends on 1) (0 depend on it):<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a class='com.roclas__jdbc dependsOnMe' href='#com.mycompany__jdbc'>com.mycompany__jdbc</a><br />
  </body>
  </html>

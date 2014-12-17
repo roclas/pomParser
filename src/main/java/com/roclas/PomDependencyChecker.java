@@ -55,7 +55,7 @@ public class PomDependencyChecker {
 									dependency.put(name3, node3.getTextTrim());
 								}
 							}
-							dependencies.add(dependency.get("groupId") + ":" + dependency.get("artifactId") );//+depencency.get("version")
+							dependencies.add(dependency.get("groupId") + "__" + dependency.get("artifactId") );//+depencency.get("version")
 						}
 					}
 				}
@@ -82,7 +82,7 @@ public class PomDependencyChecker {
 				file_id.put(name, node.getTextTrim());
 			}
 		}
-		String id = file_id.get("groupId") + ":" + file_id.get("artifactId");
+		String id = file_id.get("groupId") + "__" + file_id.get("artifactId");
 		return id;
 	}
 

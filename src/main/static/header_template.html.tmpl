@@ -22,11 +22,13 @@ Explanation:<br>
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
    <script>
      $(document).ready(function(){
-       //$("span.reverse").click(function(event){
-       	 //var id=this.getAttribute("class").split(" ")[1];
-       	 //var links=jQuery("a[href='#"+id+"']");
-       	 //links.each(function(i,e){ console.debug(e.getAttribute("class")); });
-         //event.preventDefault();
-       //});
+       $("span.dependsOnMe").hover(function(event){
+		$(this).css('cursor','pointer');
+       });
+       $("span.dependsOnMe").click(function(event){
+		//var id="null__crossdata-server";
+		var id=this.innerHTML;
+		$(document).scrollTop( $("#"+id).offset().top );  
+       });
      });
    </script>

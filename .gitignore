@@ -3,3 +3,6 @@ target/*
 # Package Files #
 *.war
 *.ear
+.idea/
+pom_parser.iml
+

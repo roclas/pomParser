@@ -5,8 +5,8 @@
    <title>Dependencies between POMs</title>
    <style>
    .reverse{ font-size: x-small; }
-   .IDependOn{ background-color: red; }
-   .dependsOnMe{ background-color: yellow; }
+   .needMe{ background-color: red; }
+   .INeed{ background-color: yellow; }
    </style>
  </head>
  <body>
@@ -14,18 +14,18 @@
 <div style="background-color:grey;">
 Explanation:<br>
 <strong>groupId:artifactId (dependends on N) (M depend on it):<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='IDependOn'>com.mycompany:securit</span><-- groupId:ArtifactId is a dependency for com.mycompany<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>org.springframework.security:spring-security-taglibs</span> <-- groupId:ArtifactId depends on org.springfram...<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='needMe example'>com.mycompany:securit</span><-- groupId:ArtifactId is a dependency for com.mycompany<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='INeed example'>org.springframework.security:spring-security-taglibs</span> <-- groupId:ArtifactId depends on org.springfram...<br />
 </div>
 <br />
 <br />
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
    <script>
      $(document).ready(function(){
-       $("span.dependsOnMe").hover(function(event){
+       $("span.INeed").hover(function(event){
 		$(this).css('cursor','pointer');
        });
-       $("span.dependsOnMe").click(function(event){
+       $("span.INeed").click(function(event){
 		//var id="null__crossdata-server";
 		var id=this.innerHTML;
 		$(document).scrollTop( $("#"+id).offset().top );  

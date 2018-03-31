@@ -17,7 +17,7 @@ Steps:
 
 1)gather all your pom files and change their names (so they don't overrite each other) and copy them to an EMPTY directory.
 
-2)just get the latest jar from https://github.com/roclas/pomParser/raw/master/lib/pom_parser-1.0.jar and use it like this:
+2)get the latest jar from https://github.com/roclas/pomParser/raw/master/lib/pom_parser-1.0.jar, copy it to the directory where you will run it from and use it like this:
 java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
 
 <br /><br />
@@ -31,7 +31,7 @@ mvn install
 
 2)gather all your pom files and change their names (so they don't overrite each other) and copy them to an EMPTY directory.
 
-3)get the jar and use it like this:
+3)copy the jar to the directory where you will run it from and use it like this:
 java -jar pom_parser-X.X.jar _origin_dir_where_all_your_poms_are_ _dest_dir_where_the_graph_goes_
 
 

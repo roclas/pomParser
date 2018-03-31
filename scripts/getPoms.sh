@@ -1,5 +1,31 @@
 #!/usr/bin/env bash
 
+fetchJarPathsFromDependencyFile () {
+    for i in $(cat $1 | grep "class=.INeed.>" | sed "s/[^>]*>//" | sed "s/<.*//")
+    do
+    coursier fetch $i
+    done | grep jar 
+}
+
+
+extractPomsFromJars () {
+    mkdir -p /tmp/poms
+    n=0
+	for i in $(find $1 -name "*jar"|sort)
+	do
+        n=$(( n + 1 ))
+		internalFile=$(jar -tf $i | grep -i "pom.xml")
+		if [ ! -z "$internalFile" ]
+		then
+		    echo "$internalFile"
+		    unzip -p $i $internalFile> /tmp/poms/$n.pom.xml
+		fi
+	done
+	mv /tmp/poms $2
+}
+
+
+getPoms () {
 if [ "$#" -lt 2 ]; then
     echo "Illegal number of parameters"
     echo "Usage:"
@@ -8,6 +34,7 @@ if [ "$#" -lt 2 ]; then
 fi
 
 n=0
+extractPomsFromJars $1 $1
 for i in $(find $1 -name pom.xml)
 do
  n=$(( n + 1 ))
@@ -21,4 +48,5 @@ do
 	}\
 ' > $2/$n.xml
 done
+}
 

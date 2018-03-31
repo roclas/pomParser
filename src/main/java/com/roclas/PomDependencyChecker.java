@@ -4,13 +4,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
-import java.rmi.server.LoaderHandler;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +16,6 @@ import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 
-import java.util.logging.Logger;
 
 public class PomDependencyChecker {
 
@@ -55,7 +51,7 @@ public class PomDependencyChecker {
 									dependency.put(name3, node3.getTextTrim());
 								}
 							}
-							dependencies.add(dependency.get("groupId") + "__" + dependency.get("artifactId") );//+depencency.get("version")
+							dependencies.add(dependency.get("groupId") + ":" + dependency.get("artifactId") +":" +  dependency.get("version"));
 						}
 					}
 				}
@@ -82,7 +78,9 @@ public class PomDependencyChecker {
 				file_id.put(name, node.getTextTrim());
 			}
 		}
-		String id = file_id.get("groupId") + "__" + file_id.get("artifactId");
+		String version="";
+		try{ version=":" +  file_id.get("version"); }catch (Exception e){};
+		String id = file_id.get("groupId") + ":" + file_id.get("artifactId")+ version;
 		return id;
 	}
 
@@ -96,8 +94,9 @@ public class PomDependencyChecker {
         
         FileWriter fw= new FileWriter(output_file);
         out = new BufferedWriter(fw);
-        
-        FileInputStream fstream0 = new FileInputStream("src/main/static/header_template.html.tmpl");
+
+		InputStream fstream0= loader.getResourceAsStream("header_template.html.tmpl");
+
         DataInputStream in0 = new DataInputStream(fstream0);
         BufferedReader br0 = new BufferedReader(new InputStreamReader(in0));
         String strLine0;
@@ -125,7 +124,6 @@ public class PomDependencyChecker {
 				} catch (Exception e) {System.out.println(e.getStackTrace()); }
 			}
 		}
-        System.out.println("tres");
 		for (String k: dependencies.keySet()) {
 		    Object[] deps= dependencies.get(k);
 		    ArrayList<String> reverse_deps = reverse_dependencies.get(k);
@@ -134,21 +132,21 @@ public class PomDependencyChecker {
 			out.write("\n<br /><strong id='" + k + "'>" + k + "</strong> (depends on "+deps.length+") ("+size+" depend on it):<br />\n");
 		    if(reverse_deps!=null){
 		      for (String d: reverse_deps) {
-				out.write("&nbsp;&nbsp;&nbsp;&nbsp;<a class='IDependOn "+d+"' href='#" + d + "'>" + d + "</a><br />\n");
+				out.write("&nbsp;&nbsp;&nbsp;&nbsp;<a class='needsMe"+d+"' href='#" + d + "'>" + d + "</a><br />\n");
 		      }
 		    }
 			for(int i=deps.length; i-->0;){
 				String link=(String)deps[i];
 				if(dependencies.get(link)!=null){
 					try {
-						out.write("&nbsp;&nbsp;&nbsp;&nbsp;<a class='"+k+" dependsOnMe' href='#" + link + "'>" + link + "</a><br />\n");
+						out.write("&nbsp;&nbsp;&nbsp;&nbsp;<a class='"+k+"INeed' href='#" + link + "'>" + link + "</a><br />\n");
 					} catch (IOException e) {System.out.println(e.getStackTrace());}
 				}else{
-					out.write("\t&nbsp;&nbsp;&nbsp;&nbsp;<span class='dependsOnMe'>" + link + "</span><br />\n");
+					out.write("\t&nbsp;&nbsp;&nbsp;&nbsp;<span class='INeed'>" + link + "</span><br />\n");
 				}
 			}
 		}
-        FileInputStream fstream1 = new FileInputStream("src/main/static/footer_template.html.tmpl");
+		InputStream fstream1= loader.getResourceAsStream("footer_template.html.tmpl");
         DataInputStream in1 = new DataInputStream(fstream1);
         BufferedReader br1 = new BufferedReader(new InputStreamReader(in1));
         String strLine1;
